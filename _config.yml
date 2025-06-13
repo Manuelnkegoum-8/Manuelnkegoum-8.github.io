@@ -1,10 +1,148 @@
-lsi: false
-safe: true
-source: [".", ".."]
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
+# ---------------------------------------
+# Site settings
+# ---------------------------------------
+title: "Manuel NKEGOUM"
+description: "PhD Candidate in Computer Vision."
+# The URL of your published site, without trailing slash. Replace `username`.
+# If deploying to GitHub Pages: https://username.github.io
+url: "https://manuelnkegoum-8.github.io"
+# If your repository is named username.github.io, baseurl is empty.
+# If deploying to a project page (repo not named username.github.io), set baseurl to "/repo-name".
+baseurl: "" # e.g., "" for user site, or "/my-ai-site" for project site
+
+# ---------------------------------------
+# Author / Social settings
+# ---------------------------------------
+author:
+  name: "Manuel NKEGOUM"
+  email: "manuel.nkegoum-nzouakeu@irisa.fr"
+
+# Custom social links you can use in templates/includes:
+social:
+  github: "Manuelnkegoum-8"           # your GitHub username
+  linkedin: "manuel-nkegoum" # usually the last part of your LinkedIn URL
+  orcid: "0000-0002-XXXX-XXXX"          # e.g., "0000-0002-XXXX-XXXX"
+  scholar_id: "YOUR_ID"        # for Google Scholar link, if you build one manually
+
+# ---------------------------------------
+# Theme and plugins
+# ---------------------------------------
+# You can choose a lightweight theme and override layouts/CSS, or skip theme and supply your own layouts.
+# If you have custom HTML/CSS in _layouts/, you may omit `theme:` or set to a minimal theme you override.
+# Using a minimal theme (e.g. jekyll-theme-minimal) can help with defaults (feed, SEO, pagination).
+theme: jekyll-theme-minimal
+
+# GitHub Pages supports only certain plugins. The following are commonly used:
+plugins:
+  - jekyll-feed       # generates Atom/RSS feed for posts
+  - jekyll-seo-tag    # adds SEO meta tags
+  - jekyll-sitemap    # generates sitemap.xml
+  # Note: If you want pagination for index or blog listing, GitHub Pages uses jekyll-paginate v1.
+  - jekyll-paginate
+
+# ---------------------------------------
+# Markdown settings
+# ---------------------------------------
+markdown: kramdown
 kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+  input: GFM              # GitHub Flavored Markdown
+  hard_wrap: false
+  # You can add other kramdown options as needed.
+
+# ---------------------------------------
+# Permalink structure
+# ---------------------------------------
+# For posts: /year/month/day/title/
+permalink: /:year/:month/:day/:title/
+
+# ---------------------------------------
+# Defaults for collections
+# ---------------------------------------
+# Here we set defaults for posts: layout "post", author from site.author.name.
+defaults:
+  - scope:
+      path: ""       # empty means all files in the repo
+      type: "posts"  # applies to files in _posts/
+    values:
+      layout: "post"
+      author: "Researcher Name"
+
+# ---------------------------------------
+# Pagination (for blog listing)
+# ---------------------------------------
+paginate: 5               # posts per page
+paginate_path: "/blog/page:num/"  # e.g., /blog/page2/, etc.
+
+# If you want your blog index at `/blog/`, ensure you have an index.html or index.md in /blog/:
+#   ---
+#   layout: home
+#   title: "Blog"
+#   pagination: 
+#     enabled: true
+#   ---
+# And in _layouts/home.html, loop through paginator.posts.
+
+# ---------------------------------------
+# Exclude from processing
+# ---------------------------------------
+exclude:
+  - README.md
+  - node_modules/
+  - vendor/
+  # Add any folders/files you don’t want Jekyll to process.
+
+# ---------------------------------------
+# Build settings & future posts
+# ---------------------------------------
+# future: false  # by default Jekyll skips posts with future dates; keep as false so draft/future posts don't publish prematurely.
+# show_drafts: false # you can enable locally if you use `--draft` features, but not in production.
+# safe: true  # GitHub Pages builds run in safe mode.
+
+# ---------------------------------------
+# SEO / Social image defaults (optional)
+# ---------------------------------------
+# If you want default open graph image or Twitter card, you can specify:
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       image: "/assets/images/default-social.png"
+# Then in your post layout, reference page.image.
+
+# ---------------------------------------
+# Custom data files (optional)
+# ---------------------------------------
+# You can create _data/publications.yml and list your publications, then iterate in templates.
+# E.g., in _data/publications.yml:
+#   - authors: "Doe, J.; Collaborator, A."
+#     title: "Title of paper"
+#     venue: "Conference Name"
+#     year: 2024
+#     url: "/assets/papers/paper.pdf"
+# Then in your layout:
+# {% for p in site.data.publications %}
+#   <li><strong>{{ p.authors }}</strong> ({{ p.year }}). {{ p.title }}. <em>{{ p.venue }}</em>. <a href="{{ p.url }}">[PDF]</a></li>
+# {% endfor %}
+
+# ---------------------------------------
+# Additional settings
+# ---------------------------------------
+# timezone: "Europe/Paris"             # Jekyll does not use timezone in most builds, but you can set if needed.
+# host: 0.0.0.0
+# port: 4000
+# baseurl: ""                         # already set above
+# url: "https://username.github.io"  # already set above
+
+# ---------------------------------------
+# Example of Google Analytics (if you add in templates):
+google_analytics: "UA-XXXXXXXXX-X"  # replace with your UA or GA4 measurement ID if using plugin or manual script
+
+# ---------------------------------------
+# Example of environment-specific settings
+# ---------------------------------------
+# In CI or local dev, you might override baseurl:
+# production:
+#   url: "https://username.github.io"
+# development:
+#   url: "http://localhost:4000"
