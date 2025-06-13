@@ -1,0 +1,10 @@
+- authors: "Doe, J.; Collaborator, A."
+  title: "Title of paper"
+  venue: "Conference Name"
+  year: 2024
+  url: "/assets/papers/paper.pdf"
+- authors: "Your Name; Coauthor"
+  title: "Another paper"
+  venue: "Journal Name"
+  year: 2023
+  url: "https://arxiv.org/abs/XXXX.XXXXX"

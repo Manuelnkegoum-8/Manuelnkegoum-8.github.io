@@ -1,0 +1,6 @@
+- name: "Project One"
+  url: "https://github.com/username/project-one"
+  description: "Brief description of Project One: its goals and technologies used."
+- name: "Project Two"
+  url: ""
+  description: "Description if you don’t have a URL yet."
