@@ -291,7 +291,280 @@
   .rec-card ul { margin: 12px 0 0; padding-left: 18px; color: var(--text-dim); font-size: 13.5px; }
   .rec-card ul li { margin-bottom: 4px; }
 
-  /* Publications */
+  <!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuel Nkegoum — PhD Researcher in Computer Vision & AI</title>
+<meta name="description" content="Manuel Nkegoum is a PhD student at Université Bretagne-Sud (IRISA) / ATERMES, working on few-shot multispectral object detection.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --line: #e2e8f0;
+    --text: #0f172a;
+    --text-dim: #475569;
+    --text-faint: #94a3b8;
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+    --accent-soft: rgba(2, 132, 199, 0.08);
+    --radius: 8px;
+    --sidebar-width: 260px;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-theme="dark"] {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --line: #334155;
+    --text: #f8fafc;
+    --text-dim: #cbd5e1;
+    --text-faint: #64748b;
+    --accent: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+  a:hover, a:focus-visible { color: var(--accent-hover); text-decoration: underline; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  .page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .page { grid-template-columns: 1fr; gap: 40px; padding: 24px 16px 60px; }
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar { position: sticky; top: 40px; }
+  @media (max-width: 860px) { .sidebar { position: static; } }
+
+  .avatar {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .avatar .tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sidebar h1 { font-size: 1.6rem; line-height: 1.25; margin-bottom: 4px; }
+  .sidebar .role { font-size: 14px; font-weight: 500; color: var(--accent); }
+  .sidebar .org { font-size: 13px; color: var(--text-dim); margin-top: 4px; line-height: 1.4; }
+
+  /* Social & Quick Contact */
+  .side-links { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .side-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-dim);
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    transition: var(--transition);
+  }
+  .side-link-item:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateX(2px);
+    text-decoration: none;
+  }
+  .side-link-item svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+  /* Nav Links */
+  .side-nav {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .side-nav a {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .side-nav a:hover { color: var(--accent); background: var(--accent-soft); text-decoration: none; }
+  .side-nav a.active { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+
+  /* Theme Switcher */
+  .theme-toggle {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-dim);
+    transition: var(--transition);
+    width: fit-content;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .theme-toggle svg { width: 14px; height: 14px; fill: currentColor; }
+
+  /* ---------- Main Content ---------- */
+  .content section { margin-bottom: 52px; scroll-margin-top: 40px; }
+  .content h2 {
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+
+  /* Tags & Pill Badges */
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    font-weight: 500;
+  }
+
+  .lead p { color: var(--text-dim); margin: 0 0 16px; font-size: 15.5px; }
+  .lead p:last-child { margin-bottom: 0; }
+
+  .passion-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .passion-list li {
+    font-size: 14px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card);
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  .passion-list li span.emoji { font-size: 16px; flex-shrink: 0; }
+
+  /* News Section */
+  .news-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .news-list li {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-dim);
+    padding: 10px 14px;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    align-items: baseline;
+    box-shadow: var(--shadow);
+  }
+  .news-list .when {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  @media (max-width: 560px) { .news-list li { grid-template-columns: 1fr; gap: 4px; } }
+
+  /* Education & Experience Cards */
+  .rec-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  .rec-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .rec-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .rec-card h3 { font-size: 16px; font-weight: 600; }
+  .rec-card .org { font-size: 13.5px; color: var(--accent); font-weight: 500; margin-top: 2px; }
+  .rec-card .when { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); }
+  .rec-card ul { margin: 12px 0 0; padding-left: 18px; color: var(--text-dim); font-size: 13.5px; }
+  .rec-card ul li { margin-bottom: 4px; }
+
+  /* Publications with Image support */
   .pub-card {
     background: var(--card);
     border: 1px solid var(--line);
@@ -305,6 +578,7 @@
     transition: var(--transition);
   }
   .pub-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+
   .pub-thumb {
     width: 140px;
     height: 100px;
@@ -312,8 +586,17 @@
     border: 1px solid var(--line);
     overflow: hidden;
     background: var(--bg);
+    flex-shrink: 0;
   }
-  .pub-thumb svg { width: 100%; height: 100%; display: block; }
+
+  .pub-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Change to 'contain' if full diagrams must remain uncropped */
+    object-position: center;
+    display: block;
+  }
+
   .pub-title { font-size: 16px; font-weight: 600; font-family: 'Inter', sans-serif; line-height: 1.35; color: var(--text); }
   .pub-authors { font-size: 13.5px; color: var(--text-dim); margin-top: 6px; }
   .pub-authors b { color: var(--text); font-weight: 600; }
@@ -343,7 +626,7 @@
   }
   .btn-link:hover { background: var(--accent); color: #fff; text-decoration: none; }
 
-  /* Accordion for BibTeX */
+  /* BibTeX Box */
   .bibtex-box {
     grid-column: 1 / -1;
     display: none;
@@ -356,7 +639,6 @@
     font-size: 11px;
     color: var(--text-dim);
     white-space: pre-wrap;
-    position: relative;
   }
   .bibtex-box.show { display: block; }
 
@@ -365,6 +647,431 @@
     .pub-thumb { width: 100%; height: 120px; }
   }
 
+  /* Services Grid */
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .svc-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .svc-card h3 { font-size: 15px; margin-bottom: 10px; font-family: 'Inter', sans-serif; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .svc-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; color: var(--text-dim); }
+  .svc-label { color: var(--text-faint); font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
+
+  /* Footer */
+  footer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px 24px 60px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Toast Notification */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--text);
+    color: var(--bg);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+    pointer-events: none;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ---------- Sidebar ---------- -->
+  <aside class="sidebar">
+    <div class="avatar">
+      <span class="tag">PhD Candidate</span>
+      <!-- Replace 'assets/headshot.jpg' with your actual headshot image path -->
+      <img src="assets/headshot.jpg" alt="Manuel Nkegoum Profile Picture">
+    </div>
+
+    <h1>Manuel Nkegoum</h1>
+    <div class="role">PhD Student in Computer Vision</div>
+    <div class="org">Université Bretagne-Sud (IRISA) / ATERMES</div>
+
+    <div class="side-links">
+      <a href="#" onclick="copyEmail('manuelnkegoum@gmail.com'); return false;" class="side-link-item" title="Click to copy email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>manuelnkegoum@gmail.com</span>
+      </a>
+      <a href="https://github.com/Manuelnkegoum-8" target="_blank" rel="noopener" class="side-link-item">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/manuel-nkegoum" target="_blank" rel="noopener" class="side-link-item">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.75a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://huggingface.co/Manu8" target="_blank" rel="noopener" class="side-link-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-2.5-9a1.5 1.5 0 1 0-1.5-1.5A1.5 1.5 0 0 0 9.5 11zm5 0a1.5 1.5 0 1 0-1.5-1.5 1.5 1.5 0 0 0 1.5 1.5zm-5.5 3a4 4 0 0 0 6 0"/></svg>
+        <span>Hugging Face</span>
+      </a>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <span id="themeLabel">Dark Mode</span>
+    </button>
+
+    <nav class="side-nav" id="sideNav">
+      <a href="#about" class="active">About</a>
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+    </nav>
+  </aside>
+
+  <!-- ---------- Main Content ---------- -->
+  <div class="content">
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="lead">
+        <p>I am a PhD student working on <b>few-shot multispectral object detection</b>, based between <a href="https://www.irisa.fr/" target="_blank" rel="noopener">IRISA</a> / Université Bretagne-Sud and ATERMES. My research focuses on deep neural architectures that fuse visible and thermal (RGB/IR) imagery under tight annotation budgets — a critical capability for autonomous driving, surveillance, and multi-sensor robotics.</p>
+      </div>
+
+      <div class="tag-cloud">
+        <span class="badge">Computer Vision</span>
+        <span class="badge">Few-Shot Learning</span>
+        <span class="badge">Multispectral Fusion (RGB/IR)</span>
+        <span class="badge">Vision-Language Models</span>
+        <span class="badge">Deep Learning</span>
+      </div>
+
+      <ul class="passion-list">
+        <li>
+          <span class="emoji">🧠</span>
+          <div>Passionate about advancing Machine Learning and Deep Learning architectures to solve real-world computer vision challenges.</div>
+        </li>
+        <li>
+          <span class="emoji">⚽</span>
+          <div>Avid soccer enthusiast; played as a defensive & central midfielder on my university team.</div>
+        </li>
+        <li>
+          <span class="emoji">🔬</span>
+          <div>Dedicated to exploring data-efficient learning, domain adaptation, and multi-modal alignment.</div>
+        </li>
+        <li>
+          <span class="emoji">🤝</span>
+          <div>Open to research collaborations, academic exchanges, and discussions around AI breakthroughs.</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="when">[08/2026]</span>
+          <span><b>FSMODNet</b> accepted for publication in <b>Image and Vision Computing (IVC)</b>.</span>
+        </li>
+        <li>
+          <span class="when">[12/2025]</span>
+          <span>Preprint released: <i>"From Words to Wavelengths"</i> — accepted to <b>BMVC 2026</b>.</span>
+        </li>
+        <li>
+          <span class="when">[11/2024]</span>
+          <span>Started PhD research at Université Bretagne-Sud in collaboration with ATERMES.</span>
+        </li>
+        <li>
+          <span class="when">[04/2024]</span>
+          <span>Joined <b>Orange</b> as an AI Research Scientist Intern, working on speech understanding for dialog systems.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>Université Bretagne-Sud</h3>
+          <span class="when">Nov 2024 – Present</span>
+        </div>
+        <div class="org">Ph.D. in Artificial Intelligence & Computer Vision</div>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>Institut Polytechnique de Paris</h3>
+          <span class="when">Sep 2023 – Dec 2024</span>
+        </div>
+        <div class="org">M.S. in Data Sciences</div>
+        <ul>
+          <li>Computer vision (CNNs, Transformers, contrastive learning, domain adaptation)</li>
+          <li>MCMC & generative modeling (VAEs, normalizing flows, diffusion models)</li>
+          <li>NLP architectures (Transformers, seq2seq, LLM fine-tuning)</li>
+        </ul>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>Universidade da Coruña</h3>
+          <span class="when">Sep 2022 – Jun 2023</span>
+        </div>
+        <div class="org">M.S. in High Performance Computing (HPC)</div>
+        <ul>
+          <li>Parallel programming paradigms (OpenMP, MPI, CUDA)</li>
+          <li>HPC infrastructure optimization & profiling (Intel Advisor, OneAPI)</li>
+        </ul>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>CyTech (ex-EISTI)</h3>
+          <span class="when">Sep 2020 – Jun 2023</span>
+        </div>
+        <div class="org">Engineering Degree in Applied Mathematics</div>
+        <ul>
+          <li>Reinforcement learning, optimization, and graph theory</li>
+          <li>Applied probability and mathematical statistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <!-- Paper 1 -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <!-- Replace with your actual paper teaser image -->
+          <img src="assets/words-to-wavelengths.png" alt="From Words to Wavelengths architecture teaser" loading="lazy">
+        </div>
+        <div class="pub-body">
+          <div class="pub-title">From Words to Wavelengths: VLMs for Few-Shot Multispectral Object Detection</div>
+          <div class="pub-authors"><b>Manuel Nkegoum</b>, Minh-Tan Pham, Élisa Fromont, Bruno Avignon, Sébastien Lefèvre.</div>
+          <div class="pub-venue">British Machine Vision Conference (BMVC), 2026</div>
+          <div class="pub-abs">Adapts open-vocabulary models (Grounding DINO & YOLO-World) to fuse RGB and thermal modalities. Demonstrates that vision-language priors transfer effectively to unseen spectral domains and outperform specialized detectors in few-shot regimes.</div>
+          <div class="pub-actions">
+            <a href="https://arxiv.org/abs/2512.15971" target="_blank" rel="noopener" class="btn-link">arXiv</a>
+            <button class="btn-link" onclick="toggleBib('bib1')">BibTeX</button>
+          </div>
+          <div class="bibtex-box" id="bib1">@inproceedings{nkegoum2026words,
+  title={From Words to Wavelengths: VLMs for Few-Shot Multispectral Object Detection},
+  author={Nkegoum, Manuel and Pham, Minh-Tan and Fromont, {\'E}lisa and Avignon, Bruno and Lef{\`e}vre, S{\'e}bastien},
+  booktitle={British Machine Vision Conference (BMVC)},
+  year={2026}
+}</div>
+        </div>
+      </div>
+
+      <!-- Paper 2 -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <!-- Replace with your actual paper teaser image -->
+          <img src="assets/fsmodnet.png" alt="FSMODNet network architecture teaser" loading="lazy">
+        </div>
+        <div class="pub-body">
+          <div class="pub-title">FSMODNet: A Closer Look at Few-Shot Detection in Multispectral Data</div>
+          <div class="pub-authors"><b>Manuel Nkegoum</b>, Minh-Tan Pham, Élisa Fromont, Bruno Avignon, Sébastien Lefèvre.</div>
+          <div class="pub-venue">Image and Vision Computing (IVC), 2026</div>
+          <div class="pub-abs">Introduces a fusion architecture combining neighborhood attention and cross-deformable attention with prototype aggregation for few-shot detection across visible and thermal modalities.</div>
+          <div class="pub-actions">
+            <a href="https://arxiv.org/abs/2509.20905" target="_blank" rel="noopener" class="btn-link">arXiv</a>
+            <button class="btn-link" onclick="toggleBib('bib2')">BibTeX</button>
+          </div>
+          <div class="bibtex-box" id="bib2">@article{nkegoum2026fsmodnet,
+  title={FSMODNet: A Closer Look at Few-Shot Detection in Multispectral Data},
+  author={Nkegoum, Manuel and Pham, Minh-Tan and Fromont, {\'E}lisa and Avignon, Bruno and Lef{\`e}vre, S{\'e}bastien},
+  journal={Image and Vision Computing},
+  year={2026}
+}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>ATERMES</h3>
+          <span class="when">Nov 2024 – Present</span>
+        </div>
+        <div class="org">PhD Researcher — Few-Shot Multispectral Object Detection</div>
+        <ul>
+          <li>Developing deep learning architectures for object detection with limited labeled data.</li>
+          <li>Focusing on multi-sensor fusion (RGB + Long-Wave Infrared / Thermal).</li>
+        </ul>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>Orange</h3>
+          <span class="when">Apr 2024 – Sep 2024</span>
+        </div>
+        <div class="org">AI Research Scientist Intern</div>
+        <ul>
+          <li>Evaluated state-of-the-art neural speech understanding models (Wav2Vec2, T5, Whisper).</li>
+          <li>Designed speech-to-intent methods tailored for multi-turn dialogue state tracking.</li>
+          <li>Constructed experimental protocols measuring cross-dataset generalization.</li>
+        </ul>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>VINCI</h3>
+          <span class="when">Jan 2023 – Apr 2023</span>
+        </div>
+        <div class="org">Computer Vision Capstone Project</div>
+        <ul>
+          <li>Engineered a deep template-matching framework (QATM) to automate symbol counting in architectural blueprints.</li>
+        </ul>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-header">
+          <h3>TotalEnergies OneTech</h3>
+          <span class="when">May 2022 – Sep 2023</span>
+        </div>
+        <div class="org">AI Developer, Computer Vision</div>
+        <ul>
+          <li>Automated microfossil segmentation and classification using SAM (Segment Anything Model) and Fourier transforms.</li>
+          <li>Developed AI model ("PirateFlame") for industrial greenhouse-gas flare characterization (CatBoost, U-Net).</li>
+          <li>Built multi-modal image registration pipelines for petrography analysis (SimpleITK, SIFT/ORB).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Academic Services & Teaching</h2>
+
+      <div class="svc-grid">
+        <div class="svc-card">
+          <h3>Reviewer</h3>
+          <div class="svc-row">
+            <span class="svc-label">Conferences</span>
+            <span>ECCV 2026, NeurIPS 2026</span>
+          </div>
+          <div class="svc-row">
+            <span class="svc-label">Journals</span>
+            <span>IEEE JSTARS</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <h3>Teaching Assistant</h3>
+          <div class="svc-row">
+            <span class="svc-label">Winter 2026</span>
+            <span>Deep Learning for Computer Vision</span>
+          </div>
+          <div class="svc-row">
+            <span class="svc-label">Spring 2026</span>
+            <span>Databases & Information Systems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <span>© <span id="year"></span> Manuel Nkegoum</span>
+  <span>Designed for fast loading & light footprint</span>
+</footer>
+
+<!-- Toast for notifications -->
+<div class="toast" id="toast">Copied to clipboard!</div>
+
+<script>
+  // Set copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Dark Mode Toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+  const html = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  setTheme(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  });
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeLabel.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+  }
+
+  // Copy Email Function
+  function copyEmail(email) {
+    navigator.clipboard.writeText(email).then(() => {
+      showToast('Email copied to clipboard!');
+    });
+  }
+
+  // Toggle BibTeX snippet
+  function toggleBib(id) {
+    const box = document.getElementById(id);
+    box.classList.toggle('show');
+    if(box.classList.contains('show')) {
+      navigator.clipboard.writeText(box.textContent).then(() => {
+        showToast('BibTeX copied to clipboard!');
+      });
+    }
+  }
+
+  // Toast message launcher
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  // Active section tracking via IntersectionObserver
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('#sideNav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
   /* Services */
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
   .svc-card {
